@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1668708866 source:c:\users\rafae\desktop\biblioteca\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+
