@@ -109,7 +109,7 @@ int main()
                         gets(info[i].autor);
                         fflush(stdin);
                         printf("Ano: ");
-                        scanf("%d",&info[i].livro);
+                        scanf("%d",&info[i].ano);
                         fflush(stdin);
                         printf("Gênero: ");
                         gets(info[i].gender);
@@ -155,6 +155,7 @@ int main()
             break;
 
             default:
+                system("pause");
                 system("cls");
                 printf("Opção Inválida, insira uma opção válida\n\n");
         }
