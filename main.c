@@ -5,79 +5,165 @@
 
 typedef struct bancoD {
     char livro[50];
-    int lanc[50];
+    char gender[50];
+    char descrip[50];
     char autor[50];
-    char edit[50];
+    int ano;
 }t_bancoD;
 
 int main()
 {
     setlocale(0, "PORTUGUESE");
     int menu = 0;
-    int i, qtd = 0;
+    int i, c, qtd = 0, op = 0, opf = 1;
     t_bancoD info[10];
     char nome[20];
     char menu2;
 
-    printf("~ ~ ~ ~ Biblioteca Raio de Luz ~ ~ ~ ~\n\n");
-    printf("1 - Iniciar Jogo\n");
-    printf("2 - Sair\n\n");
-    scanf("%d",&menu);
-    switch (menu){
-        case 1:
-            system("cls");
-            fflush(stdin);
-            printf("Digite seu primeiro nome\n\n");
-            gets(nome);
-            printf("\nDigite quantos livros deseja registrar \n\n");
-            scanf("%d",&qtd);
-            system("cls");
-
-            for(i = 1; i <= qtd; i++){
-                printf("Livro %d\n\n",i);
-                fflush(stdin);
-                printf("Digite o nome do livro: ");
-                gets(info[i].livro);
-                printf("Ano de lan�amento: ");
-                scanf("%d",&info[i].lanc);
-                fflush(stdin);
-                printf("Autor: ");
-                gets(info[i].autor);
-                printf("Editora: ");
-                gets(info[i].edit);
-                system("cls");
-            }
-            printf("Os %d livros j� foram registrados\n\n",qtd);
-            printf("Mostrar livros registrados?\n");
-            printf("s - SIM\n");
-            printf("n - N�O\n\n");
-            scanf("%c",&menu2);
-            switch (menu2){
-                case 's':
+    // Inicio do menu
+        printf("~ ~ ~ ~ ~ ~ ~ ~ ~ Biblioteca Raio de Luz ~ ~ ~ ~ ~ ~ ~ ~ ~\n\n");
+        printf("Aventure-se em uma biblioteca virtual, sem limites!\n");
+        printf("Liberte sua imaginação, crie ou registre livros existentes!\n");
+        printf("Veja seus projetos!!\n\n");
+        printf("1 - Iniciar Jogo\n");
+        printf("2 - Sair\n");
+        printf("\n-----------------------------------------------------------\n\n");
+        scanf("%d",&menu);
+        switch (menu){
+            case 1:
+                //começo do jogo
+                for(c = 1; c <= 100; c+=5){
+                    printf("Carregando ... %d %%",c);
                     system("cls");
-                    printf("Livros registrados por %s\n\n",nome);
+                }
+                system("cls");
+                printf("Deseja CRIAR ou REGISTRAR livros?\n\n");
+                printf("1 - Criar\n2 - Registrar\n\n");
+                printf("---------------------------------\n\n");
+                scanf("%d",&op);
+                system("cls");
+                // Criar livro
+                if(op == 1){
+                    fflush(stdin);
+                    printf("> Digite seu primeiro nome <\n\n");
+                    gets(nome);
+                    printf("\n> Digite quantos livros deseja criar < \n\n");
+                    scanf("%d",&qtd);
+                    system("cls");
+
                     for(i = 1; i <= qtd; i++){
-                        printf("Livro %d",i)
-                        printf("Nome: %s\n",info[i].livro);
-                        printf("Ano de lan�amento: %s\n",info[i].lanc);
-                        printf("Autor: %s\n",info[i].autor);
-                        printf("Editora: %s\n\n",info[i].edit);
+                        printf("Livro %d\n\n",i);
+                        fflush(stdin);
+                        printf("Nome do livro: ");
+                        gets(info[i].livro);
+                        printf("Gênero: ");
+                        gets(info[i].gender);
+                        fflush(stdin);
+                        printf("Breve Descrição: ");
+                        gets(info[i].descrip);
+                        system("cls");
                     }
-                break;
+                        printf("Os %d livros já foram criados\n\n",qtd);
+                        printf("Mostrar livros criados?\n\n");
+                        printf("s - SIM\n");
+                        printf("n - NÃO\n\n");
+                        printf("------------------------------\n\n");
+                        scanf("%c",&menu2);
+                        if(menu2 == 's'){
+                            system("cls");
+                            printf("Livros criados por %s\n\n",nome);
+                            for(i = 1; i <= qtd; i++){
+                                printf("Livro %d\n",i);
+                                printf("Nome: %s\n",info[i].livro);
+                                printf("Autor: %s\n",nome);
+                                printf("Ano: 2022\n");
+                                printf("Gênero: %s\n",info[i].gender);
+                                printf("Descrição: %s\n\n",info[i].descrip);
+                            }
+                            printf("\n\nVoltar para tela de início?");
+                            printf("\n\n1 - SIM\n2 - NÃO\n\n");
+                            printf("----------------------------\n\n");
+                            scanf("%d",&opf);
+                            system("cls");
+                        }
+                        else if(menu2 == 'n'){
+                            system("cls");
+                            printf("Obrigado por jogar!\n\nAperte qualquer tecla pra sair\n\n");
+                        }
+                        else{
+                            system("cls");
+                            printf("Insira uma opção válida na próxima!\n\n");
+                        }
+                }
+                // Registrar livro
+                else if(op == 2){
+                    fflush(stdin);
+                    printf("> Digite seu primeiro nome <\n\n");
+                    gets(nome);
+                    printf("\n> Digite quantos livros deseja registrar < \n\n");
+                    scanf("%d",&qtd);
+                    system("cls");
 
-                case 'n':
-                    printf("\nObrigado por jogar!\nAperte qualquer bot�o pra sair\n\n");
-                break;
+                    for(i = 1; i <= qtd; i++){
+                        printf("Livro %d\n\n",i);
+                        fflush(stdin);
+                        printf("Nome do livro: ");
+                        gets(info[i].livro);
+                        printf("Autor: ");
+                        gets(info[i].autor);
+                        fflush(stdin);
+                        printf("Ano: ");
+                        scanf("%d",&info[i].livro);
+                        fflush(stdin);
+                        printf("Gênero: ");
+                        gets(info[i].gender);
+                        printf("Breve Descrição: ");
+                        gets(info[i].descrip);
+                        system("cls");
+                    }
+                        printf("Os %d livros já foram criados\n\n",qtd);
+                        printf("Mostrar livros criados?\n\n");
+                        printf("s - SIM\n");
+                        printf("n - NÃO\n\n");
+                        printf("------------------------------\n\n");
+                        scanf("%c",&menu2);
+                        if(menu2 == 's'){
+                            system("cls");
+                            printf("Livros criados por %s\n\n",nome);
+                            for(i = 1; i <= qtd; i++){
+                                printf("Livro %d\n",i);
+                                printf("Nome: %s\n",info[i].livro);
+                                printf("Autor: %s\n",info[i].autor);
+                                printf("Ano: %d\n",info[i].ano);
+                                printf("Gênero: %s\n",info[i].gender);
+                                printf("Descrição: %s\n\n",info[i].descrip);
+                            }
+                            printf("\n\nVoltar para tela de início?");
+                            printf("\n\n1 - SIM\n2 - NÃO\n\n");
+                            printf("----------------------------\n\n");
+                            scanf("%d",&opf);
+                            system("cls");
 
-                default:
-                    printf("\nInsira uma op��o v�lida!\n\n");
-        break;
+                        }
+                        else if(menu2 == 'n'){
+                            system("cls");
+                            printf("Obrigado por jogar!\n\nAperte qualquer tecla pra sair\n\n");
+                        }
+                        else{
+                            system("cls");
+                            printf("Insira uma opção válida na próxima!\n\n");
+                        }
+                }
+            break;
 
-        case 2:
-            printf("\nVolte sempre!\nDigite qualquer bot�o para fechar\n\n");
-        break;
+            case 2:
+                opf == 2;
+                system("cls");
+                printf("\nQue pena ;(\n\nDigite qualquer botão para fechar\n\n");
+            break;
 
-
+            default:
+                system("cls");
+                printf("Opção Inválida, insira uma opção válida\n\n");
+        }
     }
-}
-}
