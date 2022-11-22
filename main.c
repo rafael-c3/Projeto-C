@@ -120,15 +120,15 @@ int main()
                         gets(info[i].descrip);
                         system("cls");
                     }
-                        printf("Os %d livros já foram criados\n\n",qtd);
-                        printf("Mostrar livros criados?\n\n");
+                        printf("Os %d livros já foram registrados\n\n",qtd);
+                        printf("Mostrar livros registrados?\n\n");
                         printf("s - SIM\n");
                         printf("n - NÃO\n\n");
                         printf("------------------------------\n\n");
                         scanf("%c",&menu2);
                         if(menu2 == 's'){
                             system("cls");
-                            printf("Livros criados por %s\n\n",nome);
+                            printf("Livros registrados por %s\n\n",nome);
                             for(i = 1; i <= qtd; i++){
                                 printf("Livro %d\n",i);
                                 printf("Nome: %s\n",info[i].livro);
