@@ -80,7 +80,10 @@ int main()
                                 printf("Gênero: %s\n",info[i].gender);
                                 printf("Descrição: %s\n\n",info[i].descrip);
                             }
-                            printf("\nObrigado por jogar!\n\nAperte qualquer tecla pra sair\n\n");
+                            printf("\n");
+                            system("pause");
+                            system("cls");
+                            printf("Obrigado por jogar!\n\nAperte qualquer tecla pra sair\n\n");
                         }
                         else if(menu2 == 'n'){
                             system("cls");
@@ -134,7 +137,10 @@ int main()
                                 printf("Gênero: %s\n",info[i].gender);
                                 printf("Descrição: %s\n\n",info[i].descrip);
                             }
-                            printf("\nObrigado por jogar!\n\nAperte qualquer tecla pra sair\n\n");
+                            printf("\n");
+                            system("pause");
+                            system("cls");
+                            printf("Obrigado por jogar!\n\nAperte qualquer tecla pra sair\n\n");
 
                         }
                         else if(menu2 == 'n'){
