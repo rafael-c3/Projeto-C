@@ -15,7 +15,7 @@ int main()
 {
     setlocale(0, "PORTUGUESE");
     int menu = 0;
-    int i, c, qtd = 0, op = 0, opf = 1;
+    int i, c, p, qtd = 0, op = 0, opf = 1;
     t_bancoD info[10];
     char nome[20];
     char menu2;
@@ -32,7 +32,7 @@ int main()
         switch (menu){
             case 1:
                 //começo do jogo
-                for(c = 1; c <= 100; c+=5){
+                for(c = 1; c <= 100; c+=4){
                     printf("Carregando ... %d %%",c);
                     system("cls");
                 }
@@ -70,7 +70,10 @@ int main()
                         printf("------------------------------\n\n");
                         scanf("%c",&menu2);
                         if(menu2 == 's'){
-                            system("cls");
+                            for(p = 1; p <= 100; p+=5){
+                                printf("Carregando ... %d %%",p);
+                                system("cls");
+                            }
                             printf("Livros criados por %s\n\n",nome);
                             for(i = 1; i <= qtd; i++){
                                 printf("Livro %d\n",i);
@@ -127,7 +130,10 @@ int main()
                         printf("------------------------------\n\n");
                         scanf("%c",&menu2);
                         if(menu2 == 's'){
-                            system("cls");
+                            for(c = 1; c <= 100; c+=5){
+                                printf("Carregando ... %d %%",c);
+                                system("cls");
+                            }
                             printf("Livros registrados por %s\n\n",nome);
                             for(i = 1; i <= qtd; i++){
                                 printf("Livro %d\n",i);
@@ -163,6 +169,6 @@ int main()
             default:
                 system("pause");
                 system("cls");
-                printf("Opção Inválida, insira uma opção válida\n\n");
+                printf("Opção Inválida, insira uma opção válida na próxima!\n\n");
         }
     }
