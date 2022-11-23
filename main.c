@@ -175,7 +175,7 @@ int main()
     do {
         jogo();
         system("cls");
-        printf("Obrigado por jogar!\n\nDeseja jogar novamente?\n\n");
+        printf("Já vai sair?\n\nDeseja voltar a tela inicial?\n\n");
         printf("1 - SIM\n2 - NÃO\n\n");
         printf("-----------------------------------------------\n\n");
         scanf("%d",&opf);
