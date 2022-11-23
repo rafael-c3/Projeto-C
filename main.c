@@ -11,11 +11,9 @@ typedef struct bancoD {
     int ano;
 }t_bancoD;
 
-int main()
-{
-    setlocale(0, "PORTUGUESE");
+void jogo(){
     int menu = 0;
-    int i, c, p, qtd = 0, op = 0, opf = 1;
+    int i, c, p, qtd = 0, op = 0;
     t_bancoD info[10];
     char nome[20];
     char menu2;
@@ -145,9 +143,6 @@ int main()
                             }
                             printf("\n");
                             system("pause");
-                            system("cls");
-                            printf("Obrigado por jogar!\n\nAperte qualquer tecla pra sair\n\n");
-
                         }
                         else if(menu2 == 'n'){
                             system("cls");
@@ -161,14 +156,30 @@ int main()
             break;
 
             case 2:
-                opf == 2;
                 system("cls");
-                printf("\nQue pena ;(\n\nDigite qualquer botão para fechar\n\n");
+                printf("\nQue pena ;\n\nDigite qualquer botão para fechar\n\n");
             break;
 
             default:
-                system("pause");
                 system("cls");
-                printf("Opção Inválida, insira uma opção válida na próxima!\n\n");
+                printf("Opção Inválida, insira uma opção válida!\n\n");
         }
-    }
+}
+
+int main()
+{
+    setlocale(0, "PORTUGUESE");
+
+    int opf;
+
+    do {
+        jogo();
+        system("cls");
+        printf("Obrigado por jogar!\n\nDeseja jogar novamente?\n\n");
+        printf("1 - SIM\n2 - NÃO\n\n");
+        printf("-----------------------------------------------\n\n");
+        scanf("%d",&opf);
+        system("cls");
+    }while(opf == 1);
+    return 0;
+}
